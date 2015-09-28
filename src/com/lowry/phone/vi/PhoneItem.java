@@ -3,7 +3,7 @@ package com.lowry.phone.vi;
 import java.sql.Date;
 
 public class PhoneItem {
-	private int puid;
+	private int puid;//uuid
 	private String manufacturer;//品牌
 	private String model;//型号
 	private String sdkVersion;//固件版本
