@@ -1,23 +1,19 @@
 package com.lowry.phone.vi;
 
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
-public class PhoneItem {
-	private int puid;//uuid
+public class PhoneItem implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String manufacturer;//品牌
 	private String model;//型号
 	private String sdkVersion;//固件版本
 	private String platfrom;//平台
-	private Date inputDate;//录入日期
+	private List<DataItem> datas;//数据
 	private Date makeDate;//生产日期
 	private double price;//价格
 	//....
-	public int getPuid() {
-		return puid;
-	}
-	public void setPuid(int puid) {
-		this.puid = puid;
-	}
 	public String getManufacturer() {
 		return manufacturer;
 	}
@@ -54,11 +50,14 @@ public class PhoneItem {
 	public void setPlatfrom(String platfrom) {
 		this.platfrom = platfrom;
 	}
-	public Date getInputDate() {
-		return inputDate;
+	
+	public List<DataItem> getDatas() {
+		return datas;
 	}
-	public void setInputDate(Date inputDate) {
-		this.inputDate = inputDate;
+	public void addDatas(DataItem data) {
+		if(!datas.contains(data)){
+			datas.add(data);
+		}
 	}
 	@Override
 	public int hashCode() {
@@ -67,6 +66,8 @@ public class PhoneItem {
 		result = prime * result
 				+ ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
+		result = prime * result
+				+ ((platfrom == null) ? 0 : platfrom.hashCode());
 		return result;
 	}
 	@Override
@@ -81,12 +82,17 @@ public class PhoneItem {
 		if (manufacturer == null) {
 			if (other.manufacturer != null)
 				return false;
-		} else if (!manufacturer.equalsIgnoreCase(other.manufacturer))
+		} else if (!manufacturer.equals(other.manufacturer))
 			return false;
 		if (model == null) {
 			if (other.model != null)
 				return false;
-		} else if (!model.equalsIgnoreCase(other.model))
+		} else if (!model.equals(other.model))
+			return false;
+		if (platfrom == null) {
+			if (other.platfrom != null)
+				return false;
+		} else if (!platfrom.equals(other.platfrom))
 			return false;
 		return true;
 	}
