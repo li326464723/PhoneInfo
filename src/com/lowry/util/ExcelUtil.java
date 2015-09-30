@@ -1,4 +1,4 @@
-package com.lowry.phone.util;
+package com.lowry.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-import com.lowry.phone.vo.DataItem;
+import com.lowry.data.vo.DataItem;
 import com.lowry.phone.vo.PhoneItem;
 
 public class ExcelUtil {

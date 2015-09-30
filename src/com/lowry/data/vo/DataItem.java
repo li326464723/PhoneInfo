@@ -1,4 +1,4 @@
-package com.lowry.phone.vo;
+package com.lowry.data.vo;
 
 import java.io.Serializable;
 

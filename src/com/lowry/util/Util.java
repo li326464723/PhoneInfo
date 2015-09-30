@@ -1,4 +1,4 @@
-package com.lowry.phone.util;
+package com.lowry.util;
 
 import java.util.ArrayList;
 import java.util.List;

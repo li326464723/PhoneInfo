@@ -1,4 +1,4 @@
-package com.lowry.phone.db;
+package com.lowry.util.db;
 
 public class FileDBInit {
 
