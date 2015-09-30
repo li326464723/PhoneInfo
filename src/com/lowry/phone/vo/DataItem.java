@@ -1,4 +1,4 @@
-package com.lowry.phone.vi;
+package com.lowry.phone.vo;
 
 import java.io.Serializable;
 

@@ -1,19 +1,25 @@
-package com.lowry.phone.vi;
+package com.lowry.phone.vo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhoneItem implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String manufacturer;//品牌
-	private String model;//型号
-	private String sdkVersion;//固件版本
-	private String platfrom;//平台
+	private String manufacturer = null;//品牌
+	private String model = null;//型号
+	private String sdkVersion = null;//固件版本
+	private String platfrom = null;//平台
 	private List<DataItem> datas;//数据
-	private Date makeDate;//生产日期
-	private double price;//价格
+	private Date makeDate = null;//生产日期
+	private double price ;//价格
+	private int have = 0;
 	//....
+	public PhoneItem(){
+		datas = new ArrayList<DataItem>();
+	}
+	
 	public String getManufacturer() {
 		return manufacturer;
 	}
@@ -59,6 +65,14 @@ public class PhoneItem implements Serializable{
 			datas.add(data);
 		}
 	}
+	public int getHave() {
+		return have;
+	}
+
+	public void setHave(int have) {
+		this.have = have;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,11 +110,12 @@ public class PhoneItem implements Serializable{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "PhoneItem [manufacturer=" + manufacturer
-				+ ", model=" + model + ", sdkVersion=" + sdkVersion
-				+ ", makeDate=" + makeDate + ", price=" + price + "]";
+		return "PhoneItem [manufacturer=" + manufacturer + ", model=" + model
+				+ ", platfrom=" + platfrom + ", datas=" + datas + "]";
 	}
+	
 	
 }
