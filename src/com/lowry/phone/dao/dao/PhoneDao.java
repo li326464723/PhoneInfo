@@ -1,5 +1,7 @@
 package com.lowry.phone.dao.dao;
 
-public class PhoneDao {
+import com.lowry.phone.vo.PhoneItem;
 
+public interface PhoneDao {
+	public boolean add(PhoneItem phone);
 }
