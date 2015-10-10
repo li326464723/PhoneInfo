@@ -12,7 +12,7 @@ public class PhoneItem implements Serializable{
 	private String manufacturer = null;//品牌
 	private String model = null;//型号
 	private int sdkVersion = -1;//固件版本
-	private String platfrom = null;//平台
+	private int platfrom_id = -1;//平台 
 	private List<DataItem> datas;//数据
 	private Date makeDate = null;//生产日期
 	private double price ;//价格
@@ -52,11 +52,11 @@ public class PhoneItem implements Serializable{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getPlatfrom() {
-		return platfrom;
+	public int getPlatfrom() {
+		return platfrom_id;
 	}
-	public void setPlatfrom(String platfrom) {
-		this.platfrom = platfrom;
+	public void setPlatfrom(int platfrom) {
+		this.platfrom_id = platfrom;
 	}
 	
 	public List<DataItem> getDatas() {
@@ -75,6 +75,8 @@ public class PhoneItem implements Serializable{
 		this.have = have;
 	}
 
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -82,10 +84,10 @@ public class PhoneItem implements Serializable{
 		result = prime * result
 				+ ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
-		result = prime * result
-				+ ((platfrom == null) ? 0 : platfrom.hashCode());
+		result = prime * result + platfrom_id;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -105,10 +107,7 @@ public class PhoneItem implements Serializable{
 				return false;
 		} else if (!model.equals(other.model))
 			return false;
-		if (platfrom == null) {
-			if (other.platfrom != null)
-				return false;
-		} else if (!platfrom.equals(other.platfrom))
+		if (platfrom_id != other.platfrom_id)
 			return false;
 		return true;
 	}
@@ -116,7 +115,7 @@ public class PhoneItem implements Serializable{
 	@Override
 	public String toString() {
 		return "PhoneItem [manufacturer=" + manufacturer + ", model=" + model
-				+ ", platfrom=" + platfrom + ", datas=" + datas + "]";
+				+ ", platfrom=" + platfrom_id + ", datas=" + datas + "]";
 	}
 	
 	

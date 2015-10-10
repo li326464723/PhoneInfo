@@ -15,7 +15,7 @@ import com.lowry.phone.vo.PhoneItem;
 
 public class ExcelUtil {
 
-	public static void read(List<PhoneItem> phones, String patch,String appName) {
+	public static void read(List<PhoneItem> phones, String patch,int appId) {
 		try {
 			// 读取
 			Workbook book = Workbook.getWorkbook(new File(patch));
@@ -26,13 +26,18 @@ public class ExcelUtil {
 				Cell cell[] = sheet.getRow(i);
 				PhoneItem temp = new PhoneItem();
 				DataItem di = new DataItem();
-				di.setAppName(appName);
+				di.setAppId(appId);
 				System.out.println("======================" + cell[0].getContents());
 				//数据日期
 				DateCell dc = (DateCell) cell[0];
 				di.setDate(Long.valueOf(dc.getDate().getTime()));
 				//平台
-				temp.setPlatfrom(cell[1].getContents());
+				String platfrom = cell[1].getContents();
+				if(platfrom.equalsIgnoreCase("android")){
+					temp.setPlatfrom(1);
+				}else{
+					//其他平台
+				}
 				//品牌
 				temp.setManufacturer(cell[2].getContents());
 				//型号

@@ -1,5 +1,8 @@
 package com.lowry.data.business.ebi;
 
-public class DataEbi {
+import com.lowry.data.vo.DataItem;
+
+public interface DataEbi {
+	public boolean addData(DataItem data);
 
 }

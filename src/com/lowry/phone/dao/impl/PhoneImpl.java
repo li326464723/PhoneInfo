@@ -14,7 +14,7 @@ public class PhoneImpl implements PhoneDao{
 	@Override
 	public boolean addPhone(PhoneItem phone) {
 		String sql = "insert into phone (platform,manufacturer,model)values('"
-				+ "1" + "','"
+				+ phone.getPlatfrom() + "','"
 				+ phone.getManufacturer() + "','"
 				+ phone.getModel()
 				+ "')";

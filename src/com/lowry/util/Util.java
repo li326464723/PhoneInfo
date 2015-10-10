@@ -7,9 +7,9 @@ import com.lowry.phone.vo.PhoneItem;
 
 public class Util {
 	
-	public static List<PhoneItem> readExcel2Item(String patch,String appName){
+	public static List<PhoneItem> readExcel2Item(String patch,int appId){
 		List<PhoneItem> phones = new ArrayList<PhoneItem>();
-		ExcelUtil.read(phones, patch, appName);
+		ExcelUtil.read(phones, patch, appId);
 		return phones;
 	}
 	

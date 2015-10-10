@@ -6,7 +6,7 @@ public class DataItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private long date;
 	private int share;
-	private String appName;
+	private int app_id;
 	private int phoneID;
 	public long getDate() {
 		return date;
@@ -20,11 +20,11 @@ public class DataItem implements Serializable{
 	public void setShare(int share) {
 		this.share = share;
 	}
-	public String getAppName() {
-		return appName;
+	public int getAppId() {
+		return app_id;
 	}
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setAppId(int appName) {
+		this.app_id = appName;
 	}
 	
 	public int getPhoneID() {
@@ -33,12 +33,14 @@ public class DataItem implements Serializable{
 	public void setPhoneID(int phoneID) {
 		this.phoneID = phoneID;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((appName == null) ? 0 : appName.hashCode());
+		result = prime * result + app_id;
 		result = prime * result + (int) (date ^ (date >>> 32));
+		result = prime * result + phoneID;
 		result = prime * result + share;
 		return result;
 	}
@@ -51,12 +53,11 @@ public class DataItem implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		DataItem other = (DataItem) obj;
-		if (appName == null) {
-			if (other.appName != null)
-				return false;
-		} else if (!appName.equals(other.appName))
+		if (app_id != other.app_id)
 			return false;
 		if (date != other.date)
+			return false;
+		if (phoneID != other.phoneID)
 			return false;
 		if (share != other.share)
 			return false;
@@ -65,7 +66,7 @@ public class DataItem implements Serializable{
 	@Override
 	public String toString() {
 		return "DataItem [date=" + date + ", share=" + share + ", appName="
-				+ appName + "]";
+				+ app_id + "]";
 	}
 
 }

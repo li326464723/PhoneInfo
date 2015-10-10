@@ -1,5 +1,10 @@
 package com.lowry.data.business.factory;
 
-public class DataEbiFactory {
+import com.lowry.data.business.ebi.DataEbi;
+import com.lowry.data.business.ebo.DataEbo;
 
+public class DataEbiFactory {
+	public static DataEbi getDataEbi(){
+		return new DataEbo();
+	}
 }
