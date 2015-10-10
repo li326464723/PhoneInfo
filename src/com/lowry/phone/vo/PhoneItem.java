@@ -9,6 +9,7 @@ import com.lowry.data.vo.DataItem;
 
 public class PhoneItem implements Serializable{
 	private static final long serialVersionUID = 1L;
+	private int manufacturer_id = -1;//品牌ID
 	private String manufacturer = null;//品牌
 	private String model = null;//型号
 	private int sdkVersion = -1;//固件版本
@@ -22,11 +23,11 @@ public class PhoneItem implements Serializable{
 		datas = new ArrayList<DataItem>();
 	}
 	
-	public String getManufacturer() {
-		return manufacturer;
+	public int getManufacturerId() {
+		return manufacturer_id;
 	}
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
+	public void setManufacturerId(int manufacturer_id) {
+		this.manufacturer_id = manufacturer_id;
 	}
 	public String getModel() {
 		return model;
@@ -52,10 +53,10 @@ public class PhoneItem implements Serializable{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getPlatfrom() {
+	public int getPlatfromId() {
 		return platfrom_id;
 	}
-	public void setPlatfrom(int platfrom) {
+	public void setPlatfromId(int platfrom) {
 		this.platfrom_id = platfrom;
 	}
 	
@@ -74,15 +75,21 @@ public class PhoneItem implements Serializable{
 	public void setHave(int have) {
 		this.have = have;
 	}
-
 	
+
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((manufacturer == null) ? 0 : manufacturer.hashCode());
+		result = prime * result + manufacturer_id;
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
 		result = prime * result + platfrom_id;
 		return result;
@@ -97,10 +104,7 @@ public class PhoneItem implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		PhoneItem other = (PhoneItem) obj;
-		if (manufacturer == null) {
-			if (other.manufacturer != null)
-				return false;
-		} else if (!manufacturer.equals(other.manufacturer))
+		if (manufacturer_id != other.manufacturer_id)
 			return false;
 		if (model == null) {
 			if (other.model != null)
@@ -114,7 +118,7 @@ public class PhoneItem implements Serializable{
 
 	@Override
 	public String toString() {
-		return "PhoneItem [manufacturer=" + manufacturer + ", model=" + model
+		return "PhoneItem [manufacturer=" + manufacturer_id + ", model=" + model
 				+ ", platfrom=" + platfrom_id + ", datas=" + datas + "]";
 	}
 	

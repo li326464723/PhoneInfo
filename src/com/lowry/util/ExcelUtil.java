@@ -34,12 +34,13 @@ public class ExcelUtil {
 				//平台
 				String platfrom = cell[1].getContents();
 				if(platfrom.equalsIgnoreCase("android")){
-					temp.setPlatfrom(1);
+					temp.setPlatfromId(1);
 				}else{
 					//其他平台
 				}
 				//品牌
-				temp.setManufacturer(cell[2].getContents());
+				String manufacturer = Util.getManufacturer(cell[2].getContents());
+				temp.setManufacturer(manufacturer);
 				//型号
 				temp.setModel(cell[3].getContents());
 				//用户量
