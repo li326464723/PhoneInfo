@@ -7,6 +7,7 @@ public class DataItem implements Serializable{
 	private long date;
 	private int share;
 	private String appName;
+	private int phoneID;
 	public long getDate() {
 		return date;
 	}
@@ -24,6 +25,13 @@ public class DataItem implements Serializable{
 	}
 	public void setAppName(String appName) {
 		this.appName = appName;
+	}
+	
+	public int getPhoneID() {
+		return phoneID;
+	}
+	public void setPhoneID(int phoneID) {
+		this.phoneID = phoneID;
 	}
 	@Override
 	public int hashCode() {

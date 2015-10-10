@@ -11,7 +11,7 @@ public class PhoneItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String manufacturer = null;//品牌
 	private String model = null;//型号
-	private String sdkVersion = null;//固件版本
+	private int sdkVersion = -1;//固件版本
 	private String platfrom = null;//平台
 	private List<DataItem> datas;//数据
 	private Date makeDate = null;//生产日期
@@ -34,10 +34,10 @@ public class PhoneItem implements Serializable{
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getSdkVersion() {
+	public int getSdkVersion() {
 		return sdkVersion;
 	}
-	public void setSdkVersion(String sdkVersion) {
+	public void setSdkVersion(int sdkVersion) {
 		this.sdkVersion = sdkVersion;
 	}
 	public Date getMakeDate() {
