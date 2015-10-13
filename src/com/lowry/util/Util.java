@@ -96,6 +96,14 @@ public class Util {
 			manufacturer = "锤子";
 		}else if(contain(AppConst.IUSAI, facturer)){
 			manufacturer = "优赛";
+		}else if(contain(AppConst.ETON, facturer)){
+			manufacturer = "亿通";
+		}else if(contain(AppConst.ONEPLUS, facturer)){
+			manufacturer = "一加";
+		}else if(contain(AppConst.TSMART, facturer)){
+			manufacturer = "天迈";
+		}else if(contain(AppConst.BIRD, facturer)){
+			manufacturer = "波导";
 		}else{
 			manufacturer = "其他";
 		}

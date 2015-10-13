@@ -41,6 +41,10 @@ public class AppConst {
 	public static final String[] OPSSON= {"OPSSON"};//欧博信
 	public static final String[] SMARTISAN= {"smartisan"};//锤子
 	public static final String[] IUSAI= {"IUSAI"};//优赛
+	public static final String[] ETON= {"ETON"};//亿通
+	public static final String[] ONEPLUS= {"ONEPLUS"};//一加
+	public static final String[] TSMART= {"T-smart"};//天迈
+	public static final String[] BIRD= {"Bird"};//波导
 
 	
 }
